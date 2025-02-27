@@ -14,5 +14,10 @@
     "ts-jest": "^29.2.6",
     "typescript": "^5.5.3"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "dotenv": "^16.4.7",
+    "nodemailer": "^6.10.0"
+  }
 }

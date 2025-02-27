@@ -33,7 +33,7 @@ export class FileEmployeeRepository implements EmployeeRepository {
     async findEmployeesBornOn(today: CustomDate): Promise<Employee[]> {
         const data = await this.readDataFile()
         const employeeRows = data.split(this.rowSeparator).filter(line => line !== this.header)
-        return employeeRows.map(line => {
+        const employees = employeeRows.map(line => {
             const employeeData = line.split(this.separator)
             return new Employee({
                 firstName: employeeData[0],
@@ -41,6 +41,8 @@ export class FileEmployeeRepository implements EmployeeRepository {
                 dateOfBirth: new Date(employeeData[2]),
                 email: employeeData[3]
             })
-        }).filter(employee => employee.isBirthday(today))
+        })
+
+        return employees.filter(employee => employee.isBirthday(today))
     }
 }
