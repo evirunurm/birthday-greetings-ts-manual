@@ -17,15 +17,15 @@ describe('Birthday Service', () => {
         })
     })
 
-    it('should send an email to the user', async () => {
+    it("should send an email to an employee during it's birthday", async () => {
+        const today = new Date();
         emailSender.sendEmail = jest.fn()
-        const employee = EmployeeMother.anEmployee({})
-        employeeRepository.findUsersBornOn = jest.fn().mockReturnValue([
-            employee
-        ])
+        const employee = EmployeeMother.anEmployee({
+            dateOfBirth: today
+        })
+        employeeRepository.findEmployeesBornOn = jest.fn().mockReturnValue([employee])
 
-
-        birthdayService.sendGreetings(new Date())
+        await birthdayService.sendGreetings(today)
 
         expect(emailSender.sendEmail).toHaveBeenCalledWith({
             to: employee.getEmail(),

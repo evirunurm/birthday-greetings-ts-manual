@@ -1,6 +1,7 @@
 import {EmailSender} from "../domain/ports/emailSender";
 import {EmployeeRepository} from "../domain/ports/employeeRepository";
 import {Employee} from "../domain/employee";
+import {CustomDate} from "../domain/customDate";
 
 type BirthdayServiceDependencies = {
     emailSender: EmailSender
@@ -16,8 +17,8 @@ export class BirthdayService {
         this.employeeRepository = employeeRepository
     }
 
-    sendGreetings(today: Date) {
-        const employees: Employee[] = this.employeeRepository.findUsersBornOn(today)
+    async sendGreetings(today: Date) {
+        const employees: Employee[] = await this.employeeRepository.findEmployeesBornOn(new CustomDate(today))
         employees.forEach(employee => this.emailSender.sendEmail({
             to: employee.getEmail(),
             subject: 'Happy birthday!',

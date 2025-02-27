@@ -24,15 +24,14 @@ export class Employee {
         return ourDate.isSameDay(this.dateOfBirth.getDate())
     }
 
-    getEmail() {
-        return this.email
-    }
+    getEmail = () => this.email
 
-    getFirstName() {
-        return this.firstName
-    }
+
+    getFirstName = () => this.firstName
 
     getLastName() {
         return this.lastName
     }
+
+    getDateOfBirth = () => this.dateOfBirth
 }

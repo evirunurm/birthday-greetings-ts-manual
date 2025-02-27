@@ -1,3 +1,6 @@
+import {Employee} from "../employee";
+import {CustomDate} from "../customDate";
+
 export interface EmployeeRepository {
-    findUsersBornOn(today: Date): any[]
+    findEmployeesBornOn(today: CustomDate): Promise<Employee[]>
 }
