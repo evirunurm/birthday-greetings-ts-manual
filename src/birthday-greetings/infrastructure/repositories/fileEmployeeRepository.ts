@@ -2,7 +2,7 @@ import {EmployeeRepository} from "../../domain/ports/employeeRepository";
 import fs from 'fs'
 import path from 'path'
 import {Employee} from "../../domain/entities/employee";
-import {CustomDate} from "../../domain/entities/customDate";
+import {BirthdayDate} from "../../domain/entities/birthdayDate";
 
 type FileEmployeeRepositoryDependencies = {
     fileName: string
@@ -30,7 +30,7 @@ export class FileEmployeeRepository implements EmployeeRepository {
         )})
     }
 
-    async findEmployeesBornOn(today: CustomDate): Promise<Employee[]> {
+    async findEmployeesBornOn(today: BirthdayDate): Promise<Employee[]> {
         const data = await this.readDataFile()
         const employeeRows = data.split(this.rowSeparator).filter(line => line !== this.header)
         const employees = employeeRows.map(line => {

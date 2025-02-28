@@ -1,13 +1,13 @@
 import {Employee} from "./employee";
-import {CustomDate} from "./customDate";
+import {BirthdayDateMother} from "../../../../test/builders/birthdayDateMother";
 
 describe('Employee', () => {
     it('knows it its birthday', () => {
-        const customDateOfBirth = new CustomDate(new Date('2000-01-01'))
+        const customDateOfBirth = BirthdayDateMother.aBirthdayDate('2000-01-01')
         const employee = new Employee({
             firstName: 'Test',
             lastName: 'Employee',
-            dateOfBirth: customDateOfBirth.getDate(),
+            dateOfBirth: customDateOfBirth.getCurrentDate(),
             email: 'email@example.com',
         })
 
@@ -16,7 +16,7 @@ describe('Employee', () => {
 
     it("knows it's not its birthday", () => {
         const dateOfBirth = new Date('2000-01-01')
-        const customDateOfBirth = new CustomDate(new Date('2001-05-12'))
+        const customDateOfBirth = BirthdayDateMother.aBirthdayDate('2001-05-12')
         const employee = new Employee({
             firstName: 'Test',
             lastName: 'Employee',

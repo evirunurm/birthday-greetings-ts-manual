@@ -1,6 +1,6 @@
 import {Employee} from "../entities/employee";
-import {CustomDate} from "../entities/customDate";
+import {BirthdayDate} from "../entities/birthdayDate";
 
 export interface EmployeeRepository {
-    findEmployeesBornOn(today: CustomDate): Promise<Employee[]>
+    findEmployeesBornOn(today: BirthdayDate): Promise<Employee[]>
 }

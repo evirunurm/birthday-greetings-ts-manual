@@ -1,4 +1,4 @@
-import {CustomDate} from "./customDate";
+import {BirthdayDate} from "./birthdayDate";
 
 type EmployeeConstructor = {
     firstName: string,
@@ -10,28 +10,24 @@ type EmployeeConstructor = {
 export class Employee {
     private readonly firstName: string
     private readonly lastName: string
-    private readonly dateOfBirth: CustomDate
+    private readonly dateOfBirth: BirthdayDate
     private readonly email: string
 
     constructor({firstName, lastName, dateOfBirth, email}: EmployeeConstructor) {
         this.firstName = firstName
         this.lastName = lastName
-        this.dateOfBirth = new CustomDate(dateOfBirth)
+        this.dateOfBirth = new BirthdayDate(dateOfBirth)
         this.email = email
     }
 
-    isBirthday(ourDate: CustomDate) {
-        return ourDate.isSameDay(this.dateOfBirth.getDate())
-    }
+    isBirthday = (ourDate: BirthdayDate) => ourDate.isSameBirthdayDay(this.dateOfBirth)
 
     getEmail = () => this.email
 
 
     getFirstName = () => this.firstName
 
-    getLastName() {
-        return this.lastName
-    }
+    getLastName = () => this.lastName
 
     getDateOfBirth = () => this.dateOfBirth
 }
