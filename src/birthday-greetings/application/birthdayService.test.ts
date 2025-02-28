@@ -2,6 +2,7 @@ import {BirthdayService} from "./birthdayService";
 import {EmployeeRepository} from "../domain/ports/employeeRepository";
 import {EmployeeMother} from "../../../test/builders/employeeMother";
 import {EmailSender} from "../domain/ports/emailSender";
+import {BirthdayMessage} from "../domain/value-objects/birthdayMessage";
 
 describe('Birthday Service', () => {
     let birthdayService: BirthdayService
@@ -30,7 +31,7 @@ describe('Birthday Service', () => {
         expect(emailSender.sendEmail).toHaveBeenCalledWith({
             to: employee.getEmail(),
             subject: 'Happy birthday!',
-            body: 'Happy birthday, dear ' + employee.getFirstName() + '!'
+            body: new BirthdayMessage(employee).getMessage()
         })
     })
 })

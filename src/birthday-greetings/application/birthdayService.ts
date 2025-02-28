@@ -3,6 +3,7 @@ import {EmployeeRepository} from "../domain/ports/employeeRepository";
 import {Employee} from "../domain/entities/employee";
 import {BirthdayDate} from "../domain/value-objects/birthdayDate";
 import {Email} from "../domain/value-objects/email";
+import {BirthdayMessage} from "../domain/value-objects/birthdayMessage";
 
 type BirthdayServiceDependencies = {
     emailSender: EmailSender
@@ -24,7 +25,7 @@ export class BirthdayService {
             const email: Email = {
                 to: employee.getEmail(),
                 subject: 'Happy birthday!',
-                body: 'Happy birthday, dear ' + employee.getFirstName() + '!'
+                body: new BirthdayMessage(employee).getMessage()
             }
             this.emailSender.sendEmail(email)
         })
