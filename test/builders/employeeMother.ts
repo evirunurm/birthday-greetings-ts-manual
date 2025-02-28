@@ -17,6 +17,7 @@ export class EmployeeMother {
         return new Employee({
             firstName: firstName ?? 'Test',
             lastName: lastName ?? 'Employee',
+            email: email ?? 'email@example.com',
             dateOfBirth: dateOfBirth ?? new Date(
                 // A random number from 1901 to 2023
                 Math.floor(Math.random() * (2024 - 1901)) + 1901,
@@ -24,8 +25,7 @@ export class EmployeeMother {
                 Math.floor(Math.random() * 12),
                 // A random number from 1 to 28
                 Math.floor(Math.random() * 28) + 1
-            ),
-            email: email ?? 'email@example.com',
+            )
         })
     }
 }
