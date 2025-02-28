@@ -2,7 +2,7 @@ import {EmployeeRepository} from "../../domain/ports/employeeRepository";
 import fs from 'fs'
 import path from 'path'
 import {Employee} from "../../domain/entities/employee";
-import {BirthdayDate} from "../../domain/entities/birthdayDate";
+import {BirthdayDate} from "../../domain/value-objects/birthdayDate";
 
 type FileEmployeeRepositoryDependencies = {
     fileName: string

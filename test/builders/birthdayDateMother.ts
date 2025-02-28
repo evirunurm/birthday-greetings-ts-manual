@@ -1,4 +1,4 @@
-import {BirthdayDate} from "../../src/birthday-greetings/domain/entities/birthdayDate";
+import {BirthdayDate} from "../../src/birthday-greetings/domain/value-objects/birthdayDate";
 
 export class BirthdayDateMother {
     static aBirthdayDate = (date?: string) =>

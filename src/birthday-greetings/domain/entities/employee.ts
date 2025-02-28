@@ -1,4 +1,4 @@
-import {BirthdayDate} from "./birthdayDate";
+import {BirthdayDate} from "../value-objects/birthdayDate";
 
 type EmployeeConstructor = {
     firstName: string,

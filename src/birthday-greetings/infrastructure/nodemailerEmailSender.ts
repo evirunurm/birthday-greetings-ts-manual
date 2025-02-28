@@ -1,7 +1,7 @@
 import {EmailSender} from "../domain/ports/emailSender"
 import {Transporter} from "nodemailer"
 import {SendMailOptions} from "nodemailer";
-import {Email} from "../domain/entities/email";
+import {Email} from "../domain/value-objects/email";
 
 type NodemailerEmailSenderDependencies = {
     transporter: Transporter
