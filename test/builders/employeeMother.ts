@@ -1,4 +1,4 @@
-import {Employee} from "../../src/birthday-greetings/domain/employee";
+import {Employee} from "../../src/birthday-greetings/domain/entities/employee";
 
 type EmployeeConfiguration = {
     firstName?: string,
@@ -18,7 +18,7 @@ export class EmployeeMother {
             firstName: firstName ?? 'Test',
             lastName: lastName ?? 'Employee',
             dateOfBirth: dateOfBirth ?? new Date(
-                // A random number from 1901 to 2021
+                // A random number from 1901 to 2023
                 Math.floor(Math.random() * (2024 - 1901)) + 1901,
                 // A random number from 0 to 11
                 Math.floor(Math.random() * 12),

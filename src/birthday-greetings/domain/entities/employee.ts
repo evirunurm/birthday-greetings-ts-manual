@@ -10,7 +10,7 @@ type EmployeeConstructor = {
 export class Employee {
     private readonly firstName: string
     private readonly lastName: string
-    private dateOfBirth: CustomDate
+    private readonly dateOfBirth: CustomDate
     private readonly email: string
 
     constructor({firstName, lastName, dateOfBirth, email}: EmployeeConstructor) {

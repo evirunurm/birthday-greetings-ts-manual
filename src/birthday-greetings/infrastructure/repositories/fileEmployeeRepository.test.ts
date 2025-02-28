@@ -1,5 +1,5 @@
 import {FileEmployeeRepository} from "./fileEmployeeRepository";
-import {CustomDate} from "../../domain/customDate";
+import {CustomDate} from "../../domain/entities/customDate";
 import fs from "fs";
 import path from "path";
 

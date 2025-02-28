@@ -1,9 +1,5 @@
-export type SendEmailArgs = {
-    to: string
-    subject: string
-    body: string
-}
+import {Email} from "../entities/email";
 
 export interface EmailSender {
-    sendEmail({to, subject, body}: SendEmailArgs): void
+    sendEmail({to, subject, body}: Email): void
 }

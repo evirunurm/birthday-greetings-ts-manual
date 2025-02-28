@@ -1,6 +1,7 @@
-import {EmailSender, SendEmailArgs} from "../domain/ports/emailSender"
+import {EmailSender} from "../domain/ports/emailSender"
 import {Transporter} from "nodemailer"
 import {SendMailOptions} from "nodemailer";
+import {Email} from "../domain/entities/email";
 
 type NodemailerEmailSenderDependencies = {
     transporter: Transporter
@@ -13,7 +14,7 @@ export class NodemailerEmailSender implements EmailSender {
         this.transporter = transporter
     }
 
-    sendEmail({to, subject, body}: SendEmailArgs): void {
+    sendEmail({to, subject, body}: Email): void {
         const mailOptions: SendMailOptions = {
             from: 'sender@mail',
             to,

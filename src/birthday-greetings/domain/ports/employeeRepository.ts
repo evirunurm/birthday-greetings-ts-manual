@@ -1,5 +1,5 @@
-import {Employee} from "../employee";
-import {CustomDate} from "../customDate";
+import {Employee} from "../entities/employee";
+import {CustomDate} from "../entities/customDate";
 
 export interface EmployeeRepository {
     findEmployeesBornOn(today: CustomDate): Promise<Employee[]>
