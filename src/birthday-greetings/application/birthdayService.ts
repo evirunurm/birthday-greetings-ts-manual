@@ -1,8 +1,8 @@
 import {EmailSender} from "../domain/ports/emailSender";
 import {EmployeeRepository} from "../domain/ports/employeeRepository";
 import {Employee} from "../domain/entities/employee";
-import {BirthdayDate} from "../domain/entities/birthdayDate";
-import {Email} from "../domain/entities/email";
+import {BirthdayDate} from "../domain/value-objects/birthdayDate";
+import {Email} from "../domain/value-objects/email";
 
 type BirthdayServiceDependencies = {
     emailSender: EmailSender

@@ -1,5 +1,5 @@
 import {FileEmployeeRepository} from "./fileEmployeeRepository";
-import {BirthdayDate} from "../../domain/entities/birthdayDate";
+import {BirthdayDate} from "../../domain/value-objects/birthdayDate";
 import fs from "fs";
 import path from "path";
 
